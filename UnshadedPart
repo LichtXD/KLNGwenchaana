@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class UnshadedPart{
+	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+  double PI = 3.1416d;
+	System.out.print("Enter the Side of the Square: ");
+	int side = scan.nextInt();
+	System.out.print("Enter the Radius of the Cricle: ");
+	int rad = scan.nextInt();
+	double total =  side * side - PI * rad * rad;
+	System.out.printf("The total area of the unshaded part of the square is: %.02f",total);
+	}
+}
+
+//Change all variable plsss -Allen
