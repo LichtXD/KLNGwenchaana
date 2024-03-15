@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+class Input {
+    public static void main(String[] args) {
+    	
+        Scanner input = new Scanner(System.in);
+    	
+        System.out.print("Enter the base: ");
+        float base = input.nextInt();
+    	System.out.print("Enter height: ");
+        double height = input.nextInt();
+        System.out.print("The Area of Triangle is: ");
+        double myString = (base*height/2);
+        System.out.println("The Area of Triangle is: " + myString );
+    }
+}
+
+//Change all variable plsss -Allen
