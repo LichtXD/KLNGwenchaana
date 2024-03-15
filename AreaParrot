@@ -1,0 +1,22 @@
+public class AParrot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the diameter of the semi-circle: ");
+        double d = scanner.nextDouble();
+        scanner.close();
+        double B, pi, G, O, Y, r, y1;
+        pi = 3.1416;
+        G = d * d;
+        O = d * d;
+        y1 = d*d/2;
+        Y = y1/2;
+        r = d / 2.0;
+        B = pi * r * r / 2.0;
+        double TotalAr = B + G + O + Y;
+        System.out.println("\nArea of Blue: " + B);
+        System.out.printf("Area of Green: %.2f \n" , G);
+        System.out.printf("Area of Orange: %.2f \n" , O);
+        System.out.printf("Area of Yellow: %.2f \n", Y);
+        System.out.printf("\nTotal Area: %.2f ", TotalAr);
+    }
+}
