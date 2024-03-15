@@ -15,3 +15,5 @@ public class SquareSemiCircle{
 	System.out.printf("The Total Area of the Square and Semi-Circle combined is: %.02f",a1 );
 	}
 }
+
+//pls change all variable
