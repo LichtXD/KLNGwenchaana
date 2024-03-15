@@ -22,3 +22,5 @@ public class AParrot {
         System.out.printf("\nTotal Area: %.2f ", TotalAr);
     }
 }
+
+//Change all variable plsss
