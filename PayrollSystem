@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class PayrollSystem {
    public static void main(String [] args){
        double adv, sss, tax, hdmf, Net, gros;
