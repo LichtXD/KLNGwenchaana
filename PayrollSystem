@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class PayrollSystem {
+   public static void main(String [] args){
+       double adv, sss, tax, hdmf, Net, gros;
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter daily Rate:");
+        double daily = scanner.nextDouble();
+        System.out.print("Enter number of days worked:");
+        double days = scanner.nextDouble();
+        gros = daily * days;
+        System.out.printf("Gross pay: %.2f\n", gros);
+        System.out.println("\nDeductions: ");
+        
+        scanner.close();
+        
+        adv = 500;
+        sss = gros * 0.10;
+        tax = gros * 0.1212;
+        hdmf= 100;
+        Net = sss+tax+hdmf+adv;
+      
+        System.out.printf("\tSSS: %.2f \n", sss  );
+        System.out.printf("\tTAX: %.2f \n", tax );
+        System.out.printf("\tHDMF: %.2f \n", hdmf );
+        System.out.printf("\tCash Advance: %.0f (e)\n", adv );
+        System.out.printf("Total Deduction: %.2f \n", Net );
+        System.out.printf("Net Pay: %.2f \n",(gros-Net));
+      
+   }
+}
