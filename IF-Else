@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+    public class WhatIFelse{
+    public static void main (String[]args){
+    Scanner scanner = new Scanner (System.in);
+	System.out.print ("Enter Your Grade: ");
+	
+    double N1 = scanner.nextDouble();
+	
+	if (N1 >= 74.5 && N1 <= 100){
+    System.out.println ("Galing ah!");}
+	else if (N1 <= 74.4 && N1 >= 64.5){
+    System.out.println ("Lagot ka!");}
+	else if (N1 <= 64.4){
+    System.out.println ("Pano??");}
+	else if (N1 >= 101){
+    System.out.println ("Huhh?? Galing?");}
+  
+    }
+
+}
+
+
