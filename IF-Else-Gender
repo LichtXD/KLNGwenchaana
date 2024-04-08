@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class IfElseSex {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What is your gender, male or female?");
+        char gen = scanner.next().charAt(0);
+
+        if (gen == 'm' || gen == 'M') {
+        System.out.println("Male");}
+        else if (gen == 'f' || gen == 'F') {
+        System.out.println("Female");} 
+        else {
+        System.out.println("Uhm Invalid Input?");}
+    }
+}
