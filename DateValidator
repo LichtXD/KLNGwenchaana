@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class DateValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter Year:");
+        int YY = scanner.nextInt();
+        System.out.print("Enter Month:");
+        int MM = scanner.nextInt();
+        System.out.print("Enter Day:");
+        int DD = scanner.nextInt();
+        
+        if (ValidDate(YY, MM, DD)) {
+            System.out.printf("Date %02d-%02d-%02d is Valid%n", MM, DD, YY);
+        } else {
+            System.out.printf("Date %02d-%02d-%02d is Invalid%n", MM, DD, YY);
+        }
+    }
+    
+    public static boolean ValidDate(int year, int month, int day) {
+        if (year < 1 || month < 1 || month > 12 || day < 1) {
+            return false;
+        }
+        
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        if (month == 2 && LeapYear(year)) {
+            return day <= 29;
+        } else {
+            return day <= daysInMonth[month - 1];
+        }
+    }
+    
+    public static boolean LeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+}
