@@ -1,32 +1,30 @@
 import java.util.Scanner;
 
-public class GradeRemarks {
+public class Remarks {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the score: ");
         int score = scanner.nextInt();
         
-        String remark;
         if (score < 0 || score > 100) {
-            remark = "Invalid Score";
+            System.out.println("Remark: Invalid Score");
         } else if (score < 65) {
-            remark = "Invalid Score";
+            System.out.println("Remark: Invalid Score");
         } else if (score <= 74) {
-            remark = "Failed";
+            System.out.println("Remark: Failed");
         } else if (score <= 80) {
-            remark = "Not Bad";
+            System.out.println("Remark: Not Bad");
         } else if (score <= 85) {
-            remark = "Good";
+            System.out.println("Remark: Good");
         } else if (score <= 90) {
-            remark = "Very Good";
+            System.out.println("Remark: Very Good");
         } else if (score <= 95) {
-            remark = "Satisfactory";
+            System.out.println("Remark: Satisfactory");
         } else if (score <= 99) {
-            remark = "Excellent";
+            System.out.println("Remark: Excellent");
         } else {
-            remark = "Perfect";
+            System.out.println("Remark: Perfect");
         }
-        System.out.println("Remark: " + remark);
         scanner.close();
     }
 }
