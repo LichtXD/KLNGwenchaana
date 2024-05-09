@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class olanam{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Addition Table size: ");
+        int Numbers = scanner.nextInt();
+
+        for (int num1 = 0; num1 <= Numbers; num1++) {
+                for (int num2 = 0; num2 <= Numbers; num2++) {
+                    int sum = num1 + num2;
+                System.out.print(sum + "\t");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
