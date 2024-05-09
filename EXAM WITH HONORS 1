@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class PrimeNComposite {
+    public static boolean Prime(int number) {
+        if (number < 2)
+            return true;
+        for (int teger = 2; teger * teger <= number; teger++) {
+            if (number % teger == 0)
+                return false;}
+        return true;}
+    public static boolean Comp(int number) {
+        return Prime(number);}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        scanner.close();
+        if (Prime(num))
+            System.out.println(num + " is a prime number because it is divisible by 1 and " + num);
+        else
+            System.out.println(num + " is a composite number because there are 3 more divisible(s) other than 1 and " + num);
+    }
+}
