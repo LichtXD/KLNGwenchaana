@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class DateZoSto {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter Month:");
+            int mm = scanner.nextInt();
+            if (mm < 1 || mm > 12) {
+                System.out.println("Invalid Month");
+                return;
+            }
+            
+            System.out.print("Enter Day:");
+            int dd = scanner.nextInt();
+               if (!ValidDay(dd, mm)) {
+            System.out.println("Invalid day");
+            return;
+        }
+            System.out.print("Enter Year:");
+            int yy = scanner.nextInt();
+        
+            if (ValidDate(yy, mm, dd)) {
+                String zodiacSign = ZodiacSign(mm, dd);
+                String birthstone = Birthstone(mm);
+                System.out.println("\nZodiac Sign: " + zodiacSign);
+                System.out.println("Birthstone: " + birthstone);
+                return; 
+            } else {
+                System.out.println("Invalid Date");
+                break;
+            }
+        }
+    }
+
+    public static boolean ValidDate(int year, int month, int day) {
+        if (year < 1 || month < 1 || month > 12 || day < 1) {
+            return false;
+        }
+        
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        if (month == 2 && LeapYear(year)) {
+            return day <= 29;
+        } else {
+            return day <= daysInMonth[month - 1];
+        }
+    }
+    
+        
+    public static boolean ValidDay(int day, int month) {
+        if (month == 2) {
+
+            return day >= 1 && day <= 29; 
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+
+            return day >= 1 && day <= 30;
+        } else {
+ 
+            return day >= 1 && day <= 31;
+        }
+    }
+
+    public static boolean LeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+    
+    public static String ZodiacSign(int month, int day) {
+        String[] zodiacSigns = {"Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", 
+                                "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"};
+        int[] cutoffDays = {20, 19, 20, 20, 21, 21, 22, 23, 23, 23, 22, 21}; 
+        
+        if (day < cutoffDays[month - 1]) {
+            return zodiacSigns[month - 1]; 
+        } else {
+            return zodiacSigns[month]; 
+        }
+    }
+
+    public static String Birthstone(int month) {
+        String[] birthstones = {"Garnet", "Amethyst", "Aquamarine", "Diamond", "Emerald", "Pearl", 
+                                "Ruby", "Peridot", "Sapphire", "Opal", "Topaz", "Turquoise"};
+        
+        if (month >= 1 && month <= 12) {
+            return birthstones[month - 1]; 
+        } else {
+            return "Invalid Month"; 
+        }
+    }
+}
