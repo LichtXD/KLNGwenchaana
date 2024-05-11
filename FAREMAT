@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class FMP {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("Select Passenger Type:\n[r] - Regular\n[s] - Student/Senior\n[p] - PWD");
+            System.out.print("Enter Choice: ");
+            char passengerType = scanner.next().charAt(0);
+            if (!"rsp".contains(Character.toString(passengerType))) {
+                System.out.println("Invalid Choice");
+                continue;
+            }
+
+            System.out.print("Enter Kilometer(s) to Travel: ");
+            double kilometers;
+            try {
+                kilometers = scanner.nextDouble();
+                if (kilometers < 0) throw new Exception();
+            } catch (Exception e) {
+                System.out.println("Invalid Input for Kilometers. Please enter a valid positive number.");
+                continue;
+            }
+
+            double baseFare = 8;
+            double additionalFare = Math.max(0, kilometers - 4) * (passengerType == 'r' ? 1 : passengerType == 's' ? 0.75 : 0.5);
+            double totalFare = baseFare + additionalFare;
+            System.out.printf("Your Fare is: Php %.2f\n", totalFare);
+
+            break;
+        }
+        scanner.close();
+    }
+}
