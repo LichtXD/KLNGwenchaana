@@ -1,0 +1,123 @@
+import java.util.Scanner;
+
+public class MethodOverloadingDemo {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		print("Enter Number 1: ");
+		int n1 = scan.nextInt();
+		print("Enter Number 2: ");
+		int n2 = scan.nextInt();
+		print("Enter Number 3: ");
+		int n3 = scan.nextInt();
+
+		print("Choose operation (+, -, *, /): ");
+		char operation = scan.next().charAt(0);
+
+		if (n3 == 0) {
+			print("The result is: " + performOperation(n1, n2, operation));
+		} else {
+			print("The result is: " + performOperation(n1, n2, n3, operation));
+		}
+	}
+
+	public static void print(String str) {
+		System.out.print(str);
+	}
+
+	public static void print(int str) {
+		System.out.print(str);
+	}
+
+	public static void print(double str) {
+		System.out.print(str);
+	}
+
+	public static void print(char str) {
+		System.out.print(str);
+	}
+
+	public static void print(boolean str) {
+		System.out.println(str);
+	}
+
+	public static void println(String str) {
+		System.out.println(str);
+	}
+
+	public static void println(int str) {
+		System.out.println(str);
+	}
+
+	public static void println(double str) {
+		System.out.println(str);
+	}
+
+	public static void println(char str) {
+		System.out.println(str);
+	}
+
+	public static void println(boolean str) {
+		System.out.println(str);
+	}
+
+	public static int performOperation(int n1, int n2, char operation) {
+		switch (operation) {
+		case '+':
+			return n1 + n2;
+		case '-':
+			return n1 - n2;
+		case '*':
+			return n1 * n2;
+		case '/':
+			return n2 != 0 ? n1 / n2 : 0; 
+		default:
+			return 0;
+		}
+	}
+
+	public static int performOperation(int n1, int n2, int n3, char operation) {
+		switch (operation) {
+		case '+':
+			return n1 + n2 + n3;
+		case '-':
+			return n1 - n2 - n3;
+		case '*':
+			return n1 * n2 * n3;
+		case '/':
+			return (n2 != 0 && n3 != 0) ? n1 / n2 / n3 : 0;
+		default:
+			return 0;
+		}
+	}
+
+	public static double performOperation(double n1, double n2, char operation) {
+		switch (operation) {
+		case '+':
+			return n1 + n2;
+		case '-':
+			return n1 - n2;
+		case '*':
+			return n1 * n2;
+		case '/':
+			return n2 != 0 ? n1 / n2 : 0; // Handle division by zero
+		default:
+			return 0;
+		}
+	}
+
+	public static double performOperation(double n1, double n2, double n3, char operation) {
+		switch (operation) {
+		case '+':
+			return n1 + n2 + n3;
+		case '-':
+			return n1 - n2 - n3;
+		case '*':
+			return n1 * n2 * n3;
+		case '/':
+			return (n2 != 0 && n3 != 0) ? n1 / n2 / n3 : 0;
+		default:
+			return 0;
+		}
+	}
+}
