@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class BubbleSort {
+
+	public static void main(String[] args) {
+		int size = intIO("Enter Array Size: ");
+		int[] num = new int[size];
+		
+		println("");
+		
+		for(int i = 0; i < size; i++) 
+			num[i] = intIO("Enter Number " + (i+1) + ": ");
+		
+		println("");
+		println("The sorted numbers are: ");
+		
+		bubbleSort(num);
+		
+		for(int temp:num)
+			print(temp + " | ");		
+	}
+	
+	public static void bubbleSort(int[] num) {
+		int temp = 0, iStp = num.length - 1, jStp = iStp;
+		
+		for(int i = 0; i < iStp; i++) {
+			for(int j = 0; j < jStp; j++) {
+				if(num[j] > num[j + 1]) {
+					temp = num[j];
+					num[j] = num[j + 1];
+					num[j + 1] = temp;
+				}
+			}
+		}
+	}
+	
+	public static void print(String str) {
+		System.out.print(str);
+	}
+	
+	public static void println(String str) {
+		System.out.println(str);
+	}
+	
+	public static int intIO(String str) {
+		Scanner scan = new Scanner(System.in);
+		print(str);
+		return scan.nextInt();
+	}	
+
+}
