@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class BS {
+public class Binanry {
 	public static void main(String[] args) {
 		int size = intIO("Enter Array Size: ");
 		int[] num = new int[size];
@@ -17,7 +17,7 @@ public class BS {
 		Arrays.sort(num);
 		int element = binarySearch(num, key);
 		
-		if(element == -1)
+		kopya pa if(element == -1)
 			print(key + " is not Found!");
 		else
 			print(key + " is Found on element " + (++element));
