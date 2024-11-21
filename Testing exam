@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class EmployeePay {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Employee Last name: ");
+        String lastName = scanner.nextLine();
+        
+        System.out.print("Enter Employee First name: ");
+        String firstName = scanner.nextLine();
+        
+        System.out.print("Enter Employee Sex (Male / Female): ");
+        String sex = scanner.nextLine();
+        
+        System.out.print("Enter Employee Rate: ");
+        double rate = scanner.nextDouble();
+        
+        System.out.print("Enter Employee Work Days: ");
+        int workDays = scanner.nextInt();
+        
+        System.out.print("Enter Employee Cash Advance: ");
+        double cashAdvance = scanner.nextDouble();
+
+        double grossPay = rate * workDays;
+
+        double sssDeduction = grossPay * 0.10; 
+        double taxDeduction = grossPay * 0.1212;
+        double hdmfDeduction = 100;
+
+        double totalDeductions = sssDeduction + taxDeduction + hdmfDeduction + cashAdvance;
+        double netPay = grossPay - totalDeductions;
+
+        System.out.println("\nHi! Sir/Ma'am " + firstName + " " + lastName);
+        System.out.println("\nGross Pay: " + grossPay);
+        System.out.println("Deductions:");
+        System.out.println("SSS: " + sssDeduction);
+        System.out.println("TAX: " + taxDeduction);
+        System.out.println("HDMF: " + hdmfDeduction);
+        System.out.println("Cash Advance: " + cashAdvance);
+        System.out.println("\nTotal Deductions: " + totalDeductions);
+        System.out.println("Net Pay: " + netPay);
+
+        scanner.close();
+    }
+}
