@@ -1,0 +1,10 @@
+package OOPDemo;
+
+
+public interface IEmployee {
+	public void computeGrossPay();
+	public void computeSSS();
+	public void computeTAX();
+	public void computeTotalDeductions();
+	public void computeNetPay();
+}
